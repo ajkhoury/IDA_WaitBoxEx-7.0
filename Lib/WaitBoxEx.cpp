@@ -56,6 +56,7 @@ static MyQProgressDialog *prgDlg = NULL;
 # error QT_NO_UNICODE_LITERAL must be defined to avoid Qt string crashes
 #endif
 
+// big paste....
 BOOL CALLBACK EnumIdaMainWindow( HWND hwnd, LPARAM lParam )
 {
     WINDOWINFO winInfo;
@@ -64,10 +65,6 @@ BOOL CALLBACK EnumIdaMainWindow( HWND hwnd, LPARAM lParam )
     GetWindowThreadProcessId( hwnd, &dwProcessId );
     winInfo.cbSize = sizeof( WINDOWINFO );
     GetWindowInfo( hwnd, &winInfo );
-
-    //char ProcessIdText[512];
-    //nowarn_qsnprintf( ProcessIdText, 512, "ProcessId=%d HWND=0x%08X", dwProcessId, hwnd );
-    //MessageBoxA( NULL, ProcessIdText, "HWND", 0 );
 
     if ((ULONG_PTR)dwProcessId == dwIdaProcessId)
     {
